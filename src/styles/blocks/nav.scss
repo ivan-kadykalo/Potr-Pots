@@ -1,0 +1,56 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 44px;
+
+    &--burger {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+  &__link {
+    @extend %s3;
+    color: $gray2;
+    padding: 10px;
+    position: relative;
+    transition: $transition-main;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $blue;
+      transition: $transition-main;
+      transform: scale(0);
+    }
+    &:hover {
+      color: $blue;
+      &::after {
+        transform: scale(1);
+      }
+    }
+    &--basket {
+      position: relative;
+      &::before {
+        content: "0";
+        position: absolute;
+        top: 5px;
+        right: -20px;
+        display: grid;
+        place-content: center;
+        @extend %counter;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: $red;
+      }
+    }
+    &--burger {
+      color: $gray-light;
+      padding: 7px 0;
+    }
+  }
+}

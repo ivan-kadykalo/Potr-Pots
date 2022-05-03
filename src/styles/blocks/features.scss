@@ -1,0 +1,58 @@
+.features {
+  position: relative;
+  // Side text
+  &__side-text {
+    top: -250px;
+    transform: rotate(180deg);
+    left: $side-text-offset-desktop;
+    @include tablet {
+      display: none;
+    }
+  }
+  // Content
+  &__title {
+    margin-bottom: 76px;
+    @extend %h1;
+    color: $blue;
+    margin-right: -0.15em;
+    word-wrap: break-word;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+  }
+  &__line {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 70px;
+    }
+  }
+  &__card {
+    transition: $transition-main;
+    &:hover {
+      transform: translateY(-20px);
+    }
+  }
+  &__img {
+    margin-bottom: 36px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* stylelint-disable-line */
+    object-fit: cover;
+  }
+  &__card-title {
+    margin-bottom: 22px;
+    @extend %h3;
+    color: $gray1;
+    text-align: center;
+  }
+  &__about {
+    @extend %s3;
+    color: $gray2;
+    text-align: center;
+  }
+}

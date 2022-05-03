@@ -1,0 +1,56 @@
+.burger-menu {
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+  overflow: auto;
+
+  // Menu
+  &__close-background {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background-color: $menu-background;
+  }
+  &__deck {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 232px;
+    background-color: $blue;
+    padding: 138px 10px 10px 80px;
+
+    @media (max-height: 400px) {
+      padding: 50px 10px 10px 60px;
+    }
+  }
+  // Side close button
+  &__close-button {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 5px;
+    transform: rotate(180deg);
+    right: 30px;
+    bottom: 42px;
+  }
+  &__close-text {
+    @extend %s5;
+    color: $gray-light;
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 44px;
+      background-color: $gray-light;
+    }
+  }
+}
